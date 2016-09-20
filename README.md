@@ -1,1 +1,3 @@
 # CRISPRiaDesign
+
+Currently this site hosts just the basic sgRNA machine learning scripts used to generate the Weissman lab's next-generation CRISPRi and CRISPRa library designs (Horlbeck et al., in review). It will soon be populated with full documentation, example notebooks, and supporting files to enable de novo machine learning, prediction of sgRNA activity for desired loci, and construction of new genome-scale CRISPRi/a libraries.
