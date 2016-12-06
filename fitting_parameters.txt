@@ -1,0 +1,809 @@
+		type	params
+length	length	binnable_onehot	{'min edge data': 50, 'bin function': <function median at 0x1cf9140>, 'bin width': 1}
+distance	primary TSS-Up	continuous	{'C': [0.01, 0.05, 0.1, 0.5], 'gamma': [1e-06, 5e-05, 0.0001, 0.0005]}
+distance	primary TSS-Down	continuous	{'C': [0.01, 0.05, 0.1, 0.5], 'gamma': [1e-06, 5e-05, 0.0001, 0.0005]}
+distance	secondary TSS-Up	continuous	{'C': [0.01, 0.05, 0.1, 0.5], 'gamma': [1e-06, 5e-05, 0.0001, 0.0005]}
+distance	secondary TSS-Down	continuous	{'C': [0.01, 0.05, 0.1, 0.5], 'gamma': [1e-06, 5e-05, 0.0001, 0.0005]}
+homopolymers	A	binnable_onehot	{'min edge data': 50, 'bin function': <function median at 0x1cf9140>, 'bin width': 1}
+homopolymers	G	binnable_onehot	{'min edge data': 50, 'bin function': <function median at 0x1cf9140>, 'bin width': 1}
+homopolymers	C	binnable_onehot	{'min edge data': 50, 'bin function': <function median at 0x1cf9140>, 'bin width': 1}
+homopolymers	T	binnable_onehot	{'min edge data': 50, 'bin function': <function median at 0x1cf9140>, 'bin width': 1}
+base fractions	A	binnable_onehot	{'min edge data': 50, 'bin function': <function median at 0x1cf9140>, 'bin width': 0.1}
+base fractions	G	binnable_onehot	{'min edge data': 50, 'bin function': <function median at 0x1cf9140>, 'bin width': 0.1}
+base fractions	C	binnable_onehot	{'min edge data': 50, 'bin function': <function median at 0x1cf9140>, 'bin width': 0.1}
+base fractions	T	binnable_onehot	{'min edge data': 50, 'bin function': <function median at 0x1cf9140>, 'bin width': 0.1}
+base fractions	GC	binnable_onehot	{'min edge data': 50, 'bin function': <function median at 0x1cf9140>, 'bin width': 0.1}
+base fractions	purine	binnable_onehot	{'min edge data': 50, 'bin function': <function median at 0x1cf9140>, 'bin width': 0.1}
+base fractions	CA	binnable_onehot	{'min edge data': 50, 'bin function': <function median at 0x1cf9140>, 'bin width': 0.1}
+strand	same strand	binary	{}
+base table-A	-30	binary	{}
+base table-A	-29	binary	{}
+base table-A	-28	binary	{}
+base table-A	-27	binary	{}
+base table-A	-26	binary	{}
+base table-A	-25	binary	{}
+base table-A	-24	binary	{}
+base table-A	-23	binary	{}
+base table-A	-22	binary	{}
+base table-A	-21	binary	{}
+base table-A	-20	binary	{}
+base table-A	-19	binary	{}
+base table-A	-18	binary	{}
+base table-A	-17	binary	{}
+base table-A	-16	binary	{}
+base table-A	-15	binary	{}
+base table-A	-14	binary	{}
+base table-A	-13	binary	{}
+base table-A	-12	binary	{}
+base table-A	-11	binary	{}
+base table-A	-10	binary	{}
+base table-A	-9	binary	{}
+base table-A	-8	binary	{}
+base table-A	-7	binary	{}
+base table-A	-6	binary	{}
+base table-A	-5	binary	{}
+base table-A	-4	binary	{}
+base table-A	-3	binary	{}
+base table-A	-2	binary	{}
+base table-A	-1	binary	{}
+base table-A	0	binary	{}
+base table-A	1	binary	{}
+base table-A	2	binary	{}
+base table-A	3	binary	{}
+base table-A	4	binary	{}
+base table-A	5	binary	{}
+base table-A	6	binary	{}
+base table-A	7	binary	{}
+base table-A	8	binary	{}
+base table-A	9	binary	{}
+base table-T	-30	binary	{}
+base table-T	-29	binary	{}
+base table-T	-28	binary	{}
+base table-T	-27	binary	{}
+base table-T	-26	binary	{}
+base table-T	-25	binary	{}
+base table-T	-24	binary	{}
+base table-T	-23	binary	{}
+base table-T	-22	binary	{}
+base table-T	-21	binary	{}
+base table-T	-20	binary	{}
+base table-T	-19	binary	{}
+base table-T	-18	binary	{}
+base table-T	-17	binary	{}
+base table-T	-16	binary	{}
+base table-T	-15	binary	{}
+base table-T	-14	binary	{}
+base table-T	-13	binary	{}
+base table-T	-12	binary	{}
+base table-T	-11	binary	{}
+base table-T	-10	binary	{}
+base table-T	-9	binary	{}
+base table-T	-8	binary	{}
+base table-T	-7	binary	{}
+base table-T	-6	binary	{}
+base table-T	-5	binary	{}
+base table-T	-4	binary	{}
+base table-T	-3	binary	{}
+base table-T	-2	binary	{}
+base table-T	-1	binary	{}
+base table-T	0	binary	{}
+base table-T	1	binary	{}
+base table-T	2	binary	{}
+base table-T	3	binary	{}
+base table-T	4	binary	{}
+base table-T	5	binary	{}
+base table-T	6	binary	{}
+base table-T	7	binary	{}
+base table-T	8	binary	{}
+base table-T	9	binary	{}
+base table-G	-30	binary	{}
+base table-G	-29	binary	{}
+base table-G	-28	binary	{}
+base table-G	-27	binary	{}
+base table-G	-26	binary	{}
+base table-G	-25	binary	{}
+base table-G	-24	binary	{}
+base table-G	-23	binary	{}
+base table-G	-22	binary	{}
+base table-G	-21	binary	{}
+base table-G	-20	binary	{}
+base table-G	-19	binary	{}
+base table-G	-18	binary	{}
+base table-G	-17	binary	{}
+base table-G	-16	binary	{}
+base table-G	-15	binary	{}
+base table-G	-14	binary	{}
+base table-G	-13	binary	{}
+base table-G	-12	binary	{}
+base table-G	-11	binary	{}
+base table-G	-10	binary	{}
+base table-G	-9	binary	{}
+base table-G	-8	binary	{}
+base table-G	-7	binary	{}
+base table-G	-6	binary	{}
+base table-G	-5	binary	{}
+base table-G	-4	binary	{}
+base table-G	-3	binary	{}
+base table-G	-2	binary	{}
+base table-G	-1	binary	{}
+base table-G	0	binary	{}
+base table-G	1	binary	{}
+base table-G	2	binary	{}
+base table-G	3	binary	{}
+base table-G	4	binary	{}
+base table-G	5	binary	{}
+base table-G	6	binary	{}
+base table-G	7	binary	{}
+base table-G	8	binary	{}
+base table-G	9	binary	{}
+base table-C	-30	binary	{}
+base table-C	-29	binary	{}
+base table-C	-28	binary	{}
+base table-C	-27	binary	{}
+base table-C	-26	binary	{}
+base table-C	-25	binary	{}
+base table-C	-24	binary	{}
+base table-C	-23	binary	{}
+base table-C	-22	binary	{}
+base table-C	-21	binary	{}
+base table-C	-20	binary	{}
+base table-C	-19	binary	{}
+base table-C	-18	binary	{}
+base table-C	-17	binary	{}
+base table-C	-16	binary	{}
+base table-C	-15	binary	{}
+base table-C	-14	binary	{}
+base table-C	-13	binary	{}
+base table-C	-12	binary	{}
+base table-C	-11	binary	{}
+base table-C	-10	binary	{}
+base table-C	-9	binary	{}
+base table-C	-8	binary	{}
+base table-C	-7	binary	{}
+base table-C	-6	binary	{}
+base table-C	-5	binary	{}
+base table-C	-4	binary	{}
+base table-C	-3	binary	{}
+base table-C	-2	binary	{}
+base table-C	-1	binary	{}
+base table-C	0	binary	{}
+base table-C	1	binary	{}
+base table-C	2	binary	{}
+base table-C	3	binary	{}
+base table-C	4	binary	{}
+base table-C	5	binary	{}
+base table-C	6	binary	{}
+base table-C	7	binary	{}
+base table-C	8	binary	{}
+base table-C	9	binary	{}
+base dimers	(('A', 'A'), -30)	binary	{}
+base dimers	(('A', 'A'), -29)	binary	{}
+base dimers	(('A', 'A'), -28)	binary	{}
+base dimers	(('A', 'A'), -27)	binary	{}
+base dimers	(('A', 'A'), -26)	binary	{}
+base dimers	(('A', 'A'), -25)	binary	{}
+base dimers	(('A', 'A'), -24)	binary	{}
+base dimers	(('A', 'A'), -23)	binary	{}
+base dimers	(('A', 'A'), -22)	binary	{}
+base dimers	(('A', 'A'), -21)	binary	{}
+base dimers	(('A', 'A'), -20)	binary	{}
+base dimers	(('A', 'A'), -19)	binary	{}
+base dimers	(('A', 'A'), -18)	binary	{}
+base dimers	(('A', 'A'), -17)	binary	{}
+base dimers	(('A', 'A'), -16)	binary	{}
+base dimers	(('A', 'A'), -15)	binary	{}
+base dimers	(('A', 'A'), -14)	binary	{}
+base dimers	(('A', 'A'), -13)	binary	{}
+base dimers	(('A', 'A'), -12)	binary	{}
+base dimers	(('A', 'A'), -11)	binary	{}
+base dimers	(('A', 'A'), -10)	binary	{}
+base dimers	(('A', 'A'), -9)	binary	{}
+base dimers	(('A', 'A'), -8)	binary	{}
+base dimers	(('A', 'A'), -7)	binary	{}
+base dimers	(('A', 'A'), -6)	binary	{}
+base dimers	(('A', 'A'), -5)	binary	{}
+base dimers	(('A', 'A'), -4)	binary	{}
+base dimers	(('A', 'A'), -3)	binary	{}
+base dimers	(('A', 'A'), -2)	binary	{}
+base dimers	(('A', 'A'), -1)	binary	{}
+base dimers	(('A', 'A'), 0)	binary	{}
+base dimers	(('A', 'A'), 1)	binary	{}
+base dimers	(('A', 'A'), 2)	binary	{}
+base dimers	(('A', 'A'), 3)	binary	{}
+base dimers	(('A', 'A'), 4)	binary	{}
+base dimers	(('A', 'A'), 5)	binary	{}
+base dimers	(('A', 'A'), 6)	binary	{}
+base dimers	(('A', 'A'), 7)	binary	{}
+base dimers	(('A', 'G'), -30)	binary	{}
+base dimers	(('A', 'G'), -29)	binary	{}
+base dimers	(('A', 'G'), -28)	binary	{}
+base dimers	(('A', 'G'), -27)	binary	{}
+base dimers	(('A', 'G'), -26)	binary	{}
+base dimers	(('A', 'G'), -25)	binary	{}
+base dimers	(('A', 'G'), -24)	binary	{}
+base dimers	(('A', 'G'), -23)	binary	{}
+base dimers	(('A', 'G'), -22)	binary	{}
+base dimers	(('A', 'G'), -21)	binary	{}
+base dimers	(('A', 'G'), -20)	binary	{}
+base dimers	(('A', 'G'), -19)	binary	{}
+base dimers	(('A', 'G'), -18)	binary	{}
+base dimers	(('A', 'G'), -17)	binary	{}
+base dimers	(('A', 'G'), -16)	binary	{}
+base dimers	(('A', 'G'), -15)	binary	{}
+base dimers	(('A', 'G'), -14)	binary	{}
+base dimers	(('A', 'G'), -13)	binary	{}
+base dimers	(('A', 'G'), -12)	binary	{}
+base dimers	(('A', 'G'), -11)	binary	{}
+base dimers	(('A', 'G'), -10)	binary	{}
+base dimers	(('A', 'G'), -9)	binary	{}
+base dimers	(('A', 'G'), -8)	binary	{}
+base dimers	(('A', 'G'), -7)	binary	{}
+base dimers	(('A', 'G'), -6)	binary	{}
+base dimers	(('A', 'G'), -5)	binary	{}
+base dimers	(('A', 'G'), -4)	binary	{}
+base dimers	(('A', 'G'), -3)	binary	{}
+base dimers	(('A', 'G'), -2)	binary	{}
+base dimers	(('A', 'G'), -1)	binary	{}
+base dimers	(('A', 'G'), 0)	binary	{}
+base dimers	(('A', 'G'), 1)	binary	{}
+base dimers	(('A', 'G'), 2)	binary	{}
+base dimers	(('A', 'G'), 3)	binary	{}
+base dimers	(('A', 'G'), 4)	binary	{}
+base dimers	(('A', 'G'), 5)	binary	{}
+base dimers	(('A', 'G'), 6)	binary	{}
+base dimers	(('A', 'G'), 7)	binary	{}
+base dimers	(('A', 'C'), -30)	binary	{}
+base dimers	(('A', 'C'), -29)	binary	{}
+base dimers	(('A', 'C'), -28)	binary	{}
+base dimers	(('A', 'C'), -27)	binary	{}
+base dimers	(('A', 'C'), -26)	binary	{}
+base dimers	(('A', 'C'), -25)	binary	{}
+base dimers	(('A', 'C'), -24)	binary	{}
+base dimers	(('A', 'C'), -23)	binary	{}
+base dimers	(('A', 'C'), -22)	binary	{}
+base dimers	(('A', 'C'), -21)	binary	{}
+base dimers	(('A', 'C'), -20)	binary	{}
+base dimers	(('A', 'C'), -19)	binary	{}
+base dimers	(('A', 'C'), -18)	binary	{}
+base dimers	(('A', 'C'), -17)	binary	{}
+base dimers	(('A', 'C'), -16)	binary	{}
+base dimers	(('A', 'C'), -15)	binary	{}
+base dimers	(('A', 'C'), -14)	binary	{}
+base dimers	(('A', 'C'), -13)	binary	{}
+base dimers	(('A', 'C'), -12)	binary	{}
+base dimers	(('A', 'C'), -11)	binary	{}
+base dimers	(('A', 'C'), -10)	binary	{}
+base dimers	(('A', 'C'), -9)	binary	{}
+base dimers	(('A', 'C'), -8)	binary	{}
+base dimers	(('A', 'C'), -7)	binary	{}
+base dimers	(('A', 'C'), -6)	binary	{}
+base dimers	(('A', 'C'), -5)	binary	{}
+base dimers	(('A', 'C'), -4)	binary	{}
+base dimers	(('A', 'C'), -3)	binary	{}
+base dimers	(('A', 'C'), -2)	binary	{}
+base dimers	(('A', 'C'), -1)	binary	{}
+base dimers	(('A', 'C'), 0)	binary	{}
+base dimers	(('A', 'C'), 1)	binary	{}
+base dimers	(('A', 'C'), 2)	binary	{}
+base dimers	(('A', 'C'), 3)	binary	{}
+base dimers	(('A', 'C'), 4)	binary	{}
+base dimers	(('A', 'C'), 5)	binary	{}
+base dimers	(('A', 'C'), 6)	binary	{}
+base dimers	(('A', 'C'), 7)	binary	{}
+base dimers	(('A', 'T'), -30)	binary	{}
+base dimers	(('A', 'T'), -29)	binary	{}
+base dimers	(('A', 'T'), -28)	binary	{}
+base dimers	(('A', 'T'), -27)	binary	{}
+base dimers	(('A', 'T'), -26)	binary	{}
+base dimers	(('A', 'T'), -25)	binary	{}
+base dimers	(('A', 'T'), -24)	binary	{}
+base dimers	(('A', 'T'), -23)	binary	{}
+base dimers	(('A', 'T'), -22)	binary	{}
+base dimers	(('A', 'T'), -21)	binary	{}
+base dimers	(('A', 'T'), -20)	binary	{}
+base dimers	(('A', 'T'), -19)	binary	{}
+base dimers	(('A', 'T'), -18)	binary	{}
+base dimers	(('A', 'T'), -17)	binary	{}
+base dimers	(('A', 'T'), -16)	binary	{}
+base dimers	(('A', 'T'), -15)	binary	{}
+base dimers	(('A', 'T'), -14)	binary	{}
+base dimers	(('A', 'T'), -13)	binary	{}
+base dimers	(('A', 'T'), -12)	binary	{}
+base dimers	(('A', 'T'), -11)	binary	{}
+base dimers	(('A', 'T'), -10)	binary	{}
+base dimers	(('A', 'T'), -9)	binary	{}
+base dimers	(('A', 'T'), -8)	binary	{}
+base dimers	(('A', 'T'), -7)	binary	{}
+base dimers	(('A', 'T'), -6)	binary	{}
+base dimers	(('A', 'T'), -5)	binary	{}
+base dimers	(('A', 'T'), -4)	binary	{}
+base dimers	(('A', 'T'), -3)	binary	{}
+base dimers	(('A', 'T'), -2)	binary	{}
+base dimers	(('A', 'T'), -1)	binary	{}
+base dimers	(('A', 'T'), 0)	binary	{}
+base dimers	(('A', 'T'), 1)	binary	{}
+base dimers	(('A', 'T'), 2)	binary	{}
+base dimers	(('A', 'T'), 3)	binary	{}
+base dimers	(('A', 'T'), 4)	binary	{}
+base dimers	(('A', 'T'), 5)	binary	{}
+base dimers	(('A', 'T'), 6)	binary	{}
+base dimers	(('A', 'T'), 7)	binary	{}
+base dimers	(('G', 'A'), -30)	binary	{}
+base dimers	(('G', 'A'), -29)	binary	{}
+base dimers	(('G', 'A'), -28)	binary	{}
+base dimers	(('G', 'A'), -27)	binary	{}
+base dimers	(('G', 'A'), -26)	binary	{}
+base dimers	(('G', 'A'), -25)	binary	{}
+base dimers	(('G', 'A'), -24)	binary	{}
+base dimers	(('G', 'A'), -23)	binary	{}
+base dimers	(('G', 'A'), -22)	binary	{}
+base dimers	(('G', 'A'), -21)	binary	{}
+base dimers	(('G', 'A'), -20)	binary	{}
+base dimers	(('G', 'A'), -19)	binary	{}
+base dimers	(('G', 'A'), -18)	binary	{}
+base dimers	(('G', 'A'), -17)	binary	{}
+base dimers	(('G', 'A'), -16)	binary	{}
+base dimers	(('G', 'A'), -15)	binary	{}
+base dimers	(('G', 'A'), -14)	binary	{}
+base dimers	(('G', 'A'), -13)	binary	{}
+base dimers	(('G', 'A'), -12)	binary	{}
+base dimers	(('G', 'A'), -11)	binary	{}
+base dimers	(('G', 'A'), -10)	binary	{}
+base dimers	(('G', 'A'), -9)	binary	{}
+base dimers	(('G', 'A'), -8)	binary	{}
+base dimers	(('G', 'A'), -7)	binary	{}
+base dimers	(('G', 'A'), -6)	binary	{}
+base dimers	(('G', 'A'), -5)	binary	{}
+base dimers	(('G', 'A'), -4)	binary	{}
+base dimers	(('G', 'A'), -3)	binary	{}
+base dimers	(('G', 'A'), -2)	binary	{}
+base dimers	(('G', 'A'), -1)	binary	{}
+base dimers	(('G', 'A'), 0)	binary	{}
+base dimers	(('G', 'A'), 1)	binary	{}
+base dimers	(('G', 'A'), 2)	binary	{}
+base dimers	(('G', 'A'), 3)	binary	{}
+base dimers	(('G', 'A'), 4)	binary	{}
+base dimers	(('G', 'A'), 5)	binary	{}
+base dimers	(('G', 'A'), 6)	binary	{}
+base dimers	(('G', 'A'), 7)	binary	{}
+base dimers	(('G', 'G'), -30)	binary	{}
+base dimers	(('G', 'G'), -29)	binary	{}
+base dimers	(('G', 'G'), -28)	binary	{}
+base dimers	(('G', 'G'), -27)	binary	{}
+base dimers	(('G', 'G'), -26)	binary	{}
+base dimers	(('G', 'G'), -25)	binary	{}
+base dimers	(('G', 'G'), -24)	binary	{}
+base dimers	(('G', 'G'), -23)	binary	{}
+base dimers	(('G', 'G'), -22)	binary	{}
+base dimers	(('G', 'G'), -21)	binary	{}
+base dimers	(('G', 'G'), -20)	binary	{}
+base dimers	(('G', 'G'), -19)	binary	{}
+base dimers	(('G', 'G'), -18)	binary	{}
+base dimers	(('G', 'G'), -17)	binary	{}
+base dimers	(('G', 'G'), -16)	binary	{}
+base dimers	(('G', 'G'), -15)	binary	{}
+base dimers	(('G', 'G'), -14)	binary	{}
+base dimers	(('G', 'G'), -13)	binary	{}
+base dimers	(('G', 'G'), -12)	binary	{}
+base dimers	(('G', 'G'), -11)	binary	{}
+base dimers	(('G', 'G'), -10)	binary	{}
+base dimers	(('G', 'G'), -9)	binary	{}
+base dimers	(('G', 'G'), -8)	binary	{}
+base dimers	(('G', 'G'), -7)	binary	{}
+base dimers	(('G', 'G'), -6)	binary	{}
+base dimers	(('G', 'G'), -5)	binary	{}
+base dimers	(('G', 'G'), -4)	binary	{}
+base dimers	(('G', 'G'), -3)	binary	{}
+base dimers	(('G', 'G'), -2)	binary	{}
+base dimers	(('G', 'G'), -1)	binary	{}
+base dimers	(('G', 'G'), 0)	binary	{}
+base dimers	(('G', 'G'), 1)	binary	{}
+base dimers	(('G', 'G'), 2)	binary	{}
+base dimers	(('G', 'G'), 3)	binary	{}
+base dimers	(('G', 'G'), 4)	binary	{}
+base dimers	(('G', 'G'), 5)	binary	{}
+base dimers	(('G', 'G'), 6)	binary	{}
+base dimers	(('G', 'G'), 7)	binary	{}
+base dimers	(('G', 'C'), -30)	binary	{}
+base dimers	(('G', 'C'), -29)	binary	{}
+base dimers	(('G', 'C'), -28)	binary	{}
+base dimers	(('G', 'C'), -27)	binary	{}
+base dimers	(('G', 'C'), -26)	binary	{}
+base dimers	(('G', 'C'), -25)	binary	{}
+base dimers	(('G', 'C'), -24)	binary	{}
+base dimers	(('G', 'C'), -23)	binary	{}
+base dimers	(('G', 'C'), -22)	binary	{}
+base dimers	(('G', 'C'), -21)	binary	{}
+base dimers	(('G', 'C'), -20)	binary	{}
+base dimers	(('G', 'C'), -19)	binary	{}
+base dimers	(('G', 'C'), -18)	binary	{}
+base dimers	(('G', 'C'), -17)	binary	{}
+base dimers	(('G', 'C'), -16)	binary	{}
+base dimers	(('G', 'C'), -15)	binary	{}
+base dimers	(('G', 'C'), -14)	binary	{}
+base dimers	(('G', 'C'), -13)	binary	{}
+base dimers	(('G', 'C'), -12)	binary	{}
+base dimers	(('G', 'C'), -11)	binary	{}
+base dimers	(('G', 'C'), -10)	binary	{}
+base dimers	(('G', 'C'), -9)	binary	{}
+base dimers	(('G', 'C'), -8)	binary	{}
+base dimers	(('G', 'C'), -7)	binary	{}
+base dimers	(('G', 'C'), -6)	binary	{}
+base dimers	(('G', 'C'), -5)	binary	{}
+base dimers	(('G', 'C'), -4)	binary	{}
+base dimers	(('G', 'C'), -3)	binary	{}
+base dimers	(('G', 'C'), -2)	binary	{}
+base dimers	(('G', 'C'), -1)	binary	{}
+base dimers	(('G', 'C'), 0)	binary	{}
+base dimers	(('G', 'C'), 1)	binary	{}
+base dimers	(('G', 'C'), 2)	binary	{}
+base dimers	(('G', 'C'), 3)	binary	{}
+base dimers	(('G', 'C'), 4)	binary	{}
+base dimers	(('G', 'C'), 5)	binary	{}
+base dimers	(('G', 'C'), 6)	binary	{}
+base dimers	(('G', 'C'), 7)	binary	{}
+base dimers	(('G', 'T'), -30)	binary	{}
+base dimers	(('G', 'T'), -29)	binary	{}
+base dimers	(('G', 'T'), -28)	binary	{}
+base dimers	(('G', 'T'), -27)	binary	{}
+base dimers	(('G', 'T'), -26)	binary	{}
+base dimers	(('G', 'T'), -25)	binary	{}
+base dimers	(('G', 'T'), -24)	binary	{}
+base dimers	(('G', 'T'), -23)	binary	{}
+base dimers	(('G', 'T'), -22)	binary	{}
+base dimers	(('G', 'T'), -21)	binary	{}
+base dimers	(('G', 'T'), -20)	binary	{}
+base dimers	(('G', 'T'), -19)	binary	{}
+base dimers	(('G', 'T'), -18)	binary	{}
+base dimers	(('G', 'T'), -17)	binary	{}
+base dimers	(('G', 'T'), -16)	binary	{}
+base dimers	(('G', 'T'), -15)	binary	{}
+base dimers	(('G', 'T'), -14)	binary	{}
+base dimers	(('G', 'T'), -13)	binary	{}
+base dimers	(('G', 'T'), -12)	binary	{}
+base dimers	(('G', 'T'), -11)	binary	{}
+base dimers	(('G', 'T'), -10)	binary	{}
+base dimers	(('G', 'T'), -9)	binary	{}
+base dimers	(('G', 'T'), -8)	binary	{}
+base dimers	(('G', 'T'), -7)	binary	{}
+base dimers	(('G', 'T'), -6)	binary	{}
+base dimers	(('G', 'T'), -5)	binary	{}
+base dimers	(('G', 'T'), -4)	binary	{}
+base dimers	(('G', 'T'), -3)	binary	{}
+base dimers	(('G', 'T'), -2)	binary	{}
+base dimers	(('G', 'T'), -1)	binary	{}
+base dimers	(('G', 'T'), 0)	binary	{}
+base dimers	(('G', 'T'), 1)	binary	{}
+base dimers	(('G', 'T'), 2)	binary	{}
+base dimers	(('G', 'T'), 3)	binary	{}
+base dimers	(('G', 'T'), 4)	binary	{}
+base dimers	(('G', 'T'), 5)	binary	{}
+base dimers	(('G', 'T'), 6)	binary	{}
+base dimers	(('G', 'T'), 7)	binary	{}
+base dimers	(('C', 'A'), -30)	binary	{}
+base dimers	(('C', 'A'), -29)	binary	{}
+base dimers	(('C', 'A'), -28)	binary	{}
+base dimers	(('C', 'A'), -27)	binary	{}
+base dimers	(('C', 'A'), -26)	binary	{}
+base dimers	(('C', 'A'), -25)	binary	{}
+base dimers	(('C', 'A'), -24)	binary	{}
+base dimers	(('C', 'A'), -23)	binary	{}
+base dimers	(('C', 'A'), -22)	binary	{}
+base dimers	(('C', 'A'), -21)	binary	{}
+base dimers	(('C', 'A'), -20)	binary	{}
+base dimers	(('C', 'A'), -19)	binary	{}
+base dimers	(('C', 'A'), -18)	binary	{}
+base dimers	(('C', 'A'), -17)	binary	{}
+base dimers	(('C', 'A'), -16)	binary	{}
+base dimers	(('C', 'A'), -15)	binary	{}
+base dimers	(('C', 'A'), -14)	binary	{}
+base dimers	(('C', 'A'), -13)	binary	{}
+base dimers	(('C', 'A'), -12)	binary	{}
+base dimers	(('C', 'A'), -11)	binary	{}
+base dimers	(('C', 'A'), -10)	binary	{}
+base dimers	(('C', 'A'), -9)	binary	{}
+base dimers	(('C', 'A'), -8)	binary	{}
+base dimers	(('C', 'A'), -7)	binary	{}
+base dimers	(('C', 'A'), -6)	binary	{}
+base dimers	(('C', 'A'), -5)	binary	{}
+base dimers	(('C', 'A'), -4)	binary	{}
+base dimers	(('C', 'A'), -3)	binary	{}
+base dimers	(('C', 'A'), -2)	binary	{}
+base dimers	(('C', 'A'), -1)	binary	{}
+base dimers	(('C', 'A'), 0)	binary	{}
+base dimers	(('C', 'A'), 1)	binary	{}
+base dimers	(('C', 'A'), 2)	binary	{}
+base dimers	(('C', 'A'), 3)	binary	{}
+base dimers	(('C', 'A'), 4)	binary	{}
+base dimers	(('C', 'A'), 5)	binary	{}
+base dimers	(('C', 'A'), 6)	binary	{}
+base dimers	(('C', 'A'), 7)	binary	{}
+base dimers	(('C', 'G'), -30)	binary	{}
+base dimers	(('C', 'G'), -29)	binary	{}
+base dimers	(('C', 'G'), -28)	binary	{}
+base dimers	(('C', 'G'), -27)	binary	{}
+base dimers	(('C', 'G'), -26)	binary	{}
+base dimers	(('C', 'G'), -25)	binary	{}
+base dimers	(('C', 'G'), -24)	binary	{}
+base dimers	(('C', 'G'), -23)	binary	{}
+base dimers	(('C', 'G'), -22)	binary	{}
+base dimers	(('C', 'G'), -21)	binary	{}
+base dimers	(('C', 'G'), -20)	binary	{}
+base dimers	(('C', 'G'), -19)	binary	{}
+base dimers	(('C', 'G'), -18)	binary	{}
+base dimers	(('C', 'G'), -17)	binary	{}
+base dimers	(('C', 'G'), -16)	binary	{}
+base dimers	(('C', 'G'), -15)	binary	{}
+base dimers	(('C', 'G'), -14)	binary	{}
+base dimers	(('C', 'G'), -13)	binary	{}
+base dimers	(('C', 'G'), -12)	binary	{}
+base dimers	(('C', 'G'), -11)	binary	{}
+base dimers	(('C', 'G'), -10)	binary	{}
+base dimers	(('C', 'G'), -9)	binary	{}
+base dimers	(('C', 'G'), -8)	binary	{}
+base dimers	(('C', 'G'), -7)	binary	{}
+base dimers	(('C', 'G'), -6)	binary	{}
+base dimers	(('C', 'G'), -5)	binary	{}
+base dimers	(('C', 'G'), -4)	binary	{}
+base dimers	(('C', 'G'), -3)	binary	{}
+base dimers	(('C', 'G'), -2)	binary	{}
+base dimers	(('C', 'G'), -1)	binary	{}
+base dimers	(('C', 'G'), 0)	binary	{}
+base dimers	(('C', 'G'), 1)	binary	{}
+base dimers	(('C', 'G'), 2)	binary	{}
+base dimers	(('C', 'G'), 3)	binary	{}
+base dimers	(('C', 'G'), 4)	binary	{}
+base dimers	(('C', 'G'), 5)	binary	{}
+base dimers	(('C', 'G'), 6)	binary	{}
+base dimers	(('C', 'G'), 7)	binary	{}
+base dimers	(('C', 'C'), -30)	binary	{}
+base dimers	(('C', 'C'), -29)	binary	{}
+base dimers	(('C', 'C'), -28)	binary	{}
+base dimers	(('C', 'C'), -27)	binary	{}
+base dimers	(('C', 'C'), -26)	binary	{}
+base dimers	(('C', 'C'), -25)	binary	{}
+base dimers	(('C', 'C'), -24)	binary	{}
+base dimers	(('C', 'C'), -23)	binary	{}
+base dimers	(('C', 'C'), -22)	binary	{}
+base dimers	(('C', 'C'), -21)	binary	{}
+base dimers	(('C', 'C'), -20)	binary	{}
+base dimers	(('C', 'C'), -19)	binary	{}
+base dimers	(('C', 'C'), -18)	binary	{}
+base dimers	(('C', 'C'), -17)	binary	{}
+base dimers	(('C', 'C'), -16)	binary	{}
+base dimers	(('C', 'C'), -15)	binary	{}
+base dimers	(('C', 'C'), -14)	binary	{}
+base dimers	(('C', 'C'), -13)	binary	{}
+base dimers	(('C', 'C'), -12)	binary	{}
+base dimers	(('C', 'C'), -11)	binary	{}
+base dimers	(('C', 'C'), -10)	binary	{}
+base dimers	(('C', 'C'), -9)	binary	{}
+base dimers	(('C', 'C'), -8)	binary	{}
+base dimers	(('C', 'C'), -7)	binary	{}
+base dimers	(('C', 'C'), -6)	binary	{}
+base dimers	(('C', 'C'), -5)	binary	{}
+base dimers	(('C', 'C'), -4)	binary	{}
+base dimers	(('C', 'C'), -3)	binary	{}
+base dimers	(('C', 'C'), -2)	binary	{}
+base dimers	(('C', 'C'), -1)	binary	{}
+base dimers	(('C', 'C'), 0)	binary	{}
+base dimers	(('C', 'C'), 1)	binary	{}
+base dimers	(('C', 'C'), 2)	binary	{}
+base dimers	(('C', 'C'), 3)	binary	{}
+base dimers	(('C', 'C'), 4)	binary	{}
+base dimers	(('C', 'C'), 5)	binary	{}
+base dimers	(('C', 'C'), 6)	binary	{}
+base dimers	(('C', 'C'), 7)	binary	{}
+base dimers	(('C', 'T'), -30)	binary	{}
+base dimers	(('C', 'T'), -29)	binary	{}
+base dimers	(('C', 'T'), -28)	binary	{}
+base dimers	(('C', 'T'), -27)	binary	{}
+base dimers	(('C', 'T'), -26)	binary	{}
+base dimers	(('C', 'T'), -25)	binary	{}
+base dimers	(('C', 'T'), -24)	binary	{}
+base dimers	(('C', 'T'), -23)	binary	{}
+base dimers	(('C', 'T'), -22)	binary	{}
+base dimers	(('C', 'T'), -21)	binary	{}
+base dimers	(('C', 'T'), -20)	binary	{}
+base dimers	(('C', 'T'), -19)	binary	{}
+base dimers	(('C', 'T'), -18)	binary	{}
+base dimers	(('C', 'T'), -17)	binary	{}
+base dimers	(('C', 'T'), -16)	binary	{}
+base dimers	(('C', 'T'), -15)	binary	{}
+base dimers	(('C', 'T'), -14)	binary	{}
+base dimers	(('C', 'T'), -13)	binary	{}
+base dimers	(('C', 'T'), -12)	binary	{}
+base dimers	(('C', 'T'), -11)	binary	{}
+base dimers	(('C', 'T'), -10)	binary	{}
+base dimers	(('C', 'T'), -9)	binary	{}
+base dimers	(('C', 'T'), -8)	binary	{}
+base dimers	(('C', 'T'), -7)	binary	{}
+base dimers	(('C', 'T'), -6)	binary	{}
+base dimers	(('C', 'T'), -5)	binary	{}
+base dimers	(('C', 'T'), -4)	binary	{}
+base dimers	(('C', 'T'), -3)	binary	{}
+base dimers	(('C', 'T'), -2)	binary	{}
+base dimers	(('C', 'T'), -1)	binary	{}
+base dimers	(('C', 'T'), 0)	binary	{}
+base dimers	(('C', 'T'), 1)	binary	{}
+base dimers	(('C', 'T'), 2)	binary	{}
+base dimers	(('C', 'T'), 3)	binary	{}
+base dimers	(('C', 'T'), 4)	binary	{}
+base dimers	(('C', 'T'), 5)	binary	{}
+base dimers	(('C', 'T'), 6)	binary	{}
+base dimers	(('C', 'T'), 7)	binary	{}
+base dimers	(('T', 'A'), -30)	binary	{}
+base dimers	(('T', 'A'), -29)	binary	{}
+base dimers	(('T', 'A'), -28)	binary	{}
+base dimers	(('T', 'A'), -27)	binary	{}
+base dimers	(('T', 'A'), -26)	binary	{}
+base dimers	(('T', 'A'), -25)	binary	{}
+base dimers	(('T', 'A'), -24)	binary	{}
+base dimers	(('T', 'A'), -23)	binary	{}
+base dimers	(('T', 'A'), -22)	binary	{}
+base dimers	(('T', 'A'), -21)	binary	{}
+base dimers	(('T', 'A'), -20)	binary	{}
+base dimers	(('T', 'A'), -19)	binary	{}
+base dimers	(('T', 'A'), -18)	binary	{}
+base dimers	(('T', 'A'), -17)	binary	{}
+base dimers	(('T', 'A'), -16)	binary	{}
+base dimers	(('T', 'A'), -15)	binary	{}
+base dimers	(('T', 'A'), -14)	binary	{}
+base dimers	(('T', 'A'), -13)	binary	{}
+base dimers	(('T', 'A'), -12)	binary	{}
+base dimers	(('T', 'A'), -11)	binary	{}
+base dimers	(('T', 'A'), -10)	binary	{}
+base dimers	(('T', 'A'), -9)	binary	{}
+base dimers	(('T', 'A'), -8)	binary	{}
+base dimers	(('T', 'A'), -7)	binary	{}
+base dimers	(('T', 'A'), -6)	binary	{}
+base dimers	(('T', 'A'), -5)	binary	{}
+base dimers	(('T', 'A'), -4)	binary	{}
+base dimers	(('T', 'A'), -3)	binary	{}
+base dimers	(('T', 'A'), -2)	binary	{}
+base dimers	(('T', 'A'), -1)	binary	{}
+base dimers	(('T', 'A'), 0)	binary	{}
+base dimers	(('T', 'A'), 1)	binary	{}
+base dimers	(('T', 'A'), 2)	binary	{}
+base dimers	(('T', 'A'), 3)	binary	{}
+base dimers	(('T', 'A'), 4)	binary	{}
+base dimers	(('T', 'A'), 5)	binary	{}
+base dimers	(('T', 'A'), 6)	binary	{}
+base dimers	(('T', 'A'), 7)	binary	{}
+base dimers	(('T', 'G'), -30)	binary	{}
+base dimers	(('T', 'G'), -29)	binary	{}
+base dimers	(('T', 'G'), -28)	binary	{}
+base dimers	(('T', 'G'), -27)	binary	{}
+base dimers	(('T', 'G'), -26)	binary	{}
+base dimers	(('T', 'G'), -25)	binary	{}
+base dimers	(('T', 'G'), -24)	binary	{}
+base dimers	(('T', 'G'), -23)	binary	{}
+base dimers	(('T', 'G'), -22)	binary	{}
+base dimers	(('T', 'G'), -21)	binary	{}
+base dimers	(('T', 'G'), -20)	binary	{}
+base dimers	(('T', 'G'), -19)	binary	{}
+base dimers	(('T', 'G'), -18)	binary	{}
+base dimers	(('T', 'G'), -17)	binary	{}
+base dimers	(('T', 'G'), -16)	binary	{}
+base dimers	(('T', 'G'), -15)	binary	{}
+base dimers	(('T', 'G'), -14)	binary	{}
+base dimers	(('T', 'G'), -13)	binary	{}
+base dimers	(('T', 'G'), -12)	binary	{}
+base dimers	(('T', 'G'), -11)	binary	{}
+base dimers	(('T', 'G'), -10)	binary	{}
+base dimers	(('T', 'G'), -9)	binary	{}
+base dimers	(('T', 'G'), -8)	binary	{}
+base dimers	(('T', 'G'), -7)	binary	{}
+base dimers	(('T', 'G'), -6)	binary	{}
+base dimers	(('T', 'G'), -5)	binary	{}
+base dimers	(('T', 'G'), -4)	binary	{}
+base dimers	(('T', 'G'), -3)	binary	{}
+base dimers	(('T', 'G'), -2)	binary	{}
+base dimers	(('T', 'G'), -1)	binary	{}
+base dimers	(('T', 'G'), 0)	binary	{}
+base dimers	(('T', 'G'), 1)	binary	{}
+base dimers	(('T', 'G'), 2)	binary	{}
+base dimers	(('T', 'G'), 3)	binary	{}
+base dimers	(('T', 'G'), 4)	binary	{}
+base dimers	(('T', 'G'), 5)	binary	{}
+base dimers	(('T', 'G'), 6)	binary	{}
+base dimers	(('T', 'G'), 7)	binary	{}
+base dimers	(('T', 'C'), -30)	binary	{}
+base dimers	(('T', 'C'), -29)	binary	{}
+base dimers	(('T', 'C'), -28)	binary	{}
+base dimers	(('T', 'C'), -27)	binary	{}
+base dimers	(('T', 'C'), -26)	binary	{}
+base dimers	(('T', 'C'), -25)	binary	{}
+base dimers	(('T', 'C'), -24)	binary	{}
+base dimers	(('T', 'C'), -23)	binary	{}
+base dimers	(('T', 'C'), -22)	binary	{}
+base dimers	(('T', 'C'), -21)	binary	{}
+base dimers	(('T', 'C'), -20)	binary	{}
+base dimers	(('T', 'C'), -19)	binary	{}
+base dimers	(('T', 'C'), -18)	binary	{}
+base dimers	(('T', 'C'), -17)	binary	{}
+base dimers	(('T', 'C'), -16)	binary	{}
+base dimers	(('T', 'C'), -15)	binary	{}
+base dimers	(('T', 'C'), -14)	binary	{}
+base dimers	(('T', 'C'), -13)	binary	{}
+base dimers	(('T', 'C'), -12)	binary	{}
+base dimers	(('T', 'C'), -11)	binary	{}
+base dimers	(('T', 'C'), -10)	binary	{}
+base dimers	(('T', 'C'), -9)	binary	{}
+base dimers	(('T', 'C'), -8)	binary	{}
+base dimers	(('T', 'C'), -7)	binary	{}
+base dimers	(('T', 'C'), -6)	binary	{}
+base dimers	(('T', 'C'), -5)	binary	{}
+base dimers	(('T', 'C'), -4)	binary	{}
+base dimers	(('T', 'C'), -3)	binary	{}
+base dimers	(('T', 'C'), -2)	binary	{}
+base dimers	(('T', 'C'), -1)	binary	{}
+base dimers	(('T', 'C'), 0)	binary	{}
+base dimers	(('T', 'C'), 1)	binary	{}
+base dimers	(('T', 'C'), 2)	binary	{}
+base dimers	(('T', 'C'), 3)	binary	{}
+base dimers	(('T', 'C'), 4)	binary	{}
+base dimers	(('T', 'C'), 5)	binary	{}
+base dimers	(('T', 'C'), 6)	binary	{}
+base dimers	(('T', 'C'), 7)	binary	{}
+base dimers	(('T', 'T'), -30)	binary	{}
+base dimers	(('T', 'T'), -29)	binary	{}
+base dimers	(('T', 'T'), -28)	binary	{}
+base dimers	(('T', 'T'), -27)	binary	{}
+base dimers	(('T', 'T'), -26)	binary	{}
+base dimers	(('T', 'T'), -25)	binary	{}
+base dimers	(('T', 'T'), -24)	binary	{}
+base dimers	(('T', 'T'), -23)	binary	{}
+base dimers	(('T', 'T'), -22)	binary	{}
+base dimers	(('T', 'T'), -21)	binary	{}
+base dimers	(('T', 'T'), -20)	binary	{}
+base dimers	(('T', 'T'), -19)	binary	{}
+base dimers	(('T', 'T'), -18)	binary	{}
+base dimers	(('T', 'T'), -17)	binary	{}
+base dimers	(('T', 'T'), -16)	binary	{}
+base dimers	(('T', 'T'), -15)	binary	{}
+base dimers	(('T', 'T'), -14)	binary	{}
+base dimers	(('T', 'T'), -13)	binary	{}
+base dimers	(('T', 'T'), -12)	binary	{}
+base dimers	(('T', 'T'), -11)	binary	{}
+base dimers	(('T', 'T'), -10)	binary	{}
+base dimers	(('T', 'T'), -9)	binary	{}
+base dimers	(('T', 'T'), -8)	binary	{}
+base dimers	(('T', 'T'), -7)	binary	{}
+base dimers	(('T', 'T'), -6)	binary	{}
+base dimers	(('T', 'T'), -5)	binary	{}
+base dimers	(('T', 'T'), -4)	binary	{}
+base dimers	(('T', 'T'), -3)	binary	{}
+base dimers	(('T', 'T'), -2)	binary	{}
+base dimers	(('T', 'T'), -1)	binary	{}
+base dimers	(('T', 'T'), 0)	binary	{}
+base dimers	(('T', 'T'), 1)	binary	{}
+base dimers	(('T', 'T'), 2)	binary	{}
+base dimers	(('T', 'T'), 3)	binary	{}
+base dimers	(('T', 'T'), 4)	binary	{}
+base dimers	(('T', 'T'), 5)	binary	{}
+base dimers	(('T', 'T'), 6)	binary	{}
+base dimers	(('T', 'T'), 7)	binary	{}
+accessibility	DNase	binnable_onehot	{'min edge data': 50, 'bin function': <function median at 0x1cf9140>, 'bin width': 0.15}
+accessibility	FAIRE	binnable_onehot	{'min edge data': 50, 'bin function': <function median at 0x1cf9140>, 'bin width': 0.15}
+accessibility	MNase	binnable_onehot	{'min edge data': 50, 'bin function': <function median at 0x1cf9140>, 'bin width': 0.15}
+RNA folding-no scaffold	RNA minimum free energy	binnable_onehot	{'min edge data': 50, 'bin function': <function median at 0x1cf9140>, 'bin width': 2}
+RNA folding-with scaffold	RNA minimum free energy	binnable_onehot	{'min edge data': 50, 'bin function': <function median at 0x1cf9140>, 'bin width': 2}
+RNA folding-pairing, no scaffold	-20	binary	{}
+RNA folding-pairing, no scaffold	-19	binary	{}
+RNA folding-pairing, no scaffold	-18	binary	{}
+RNA folding-pairing, no scaffold	-17	binary	{}
+RNA folding-pairing, no scaffold	-16	binary	{}
+RNA folding-pairing, no scaffold	-15	binary	{}
+RNA folding-pairing, no scaffold	-14	binary	{}
+RNA folding-pairing, no scaffold	-13	binary	{}
+RNA folding-pairing, no scaffold	-12	binary	{}
+RNA folding-pairing, no scaffold	-11	binary	{}
+RNA folding-pairing, no scaffold	-10	binary	{}
+RNA folding-pairing, no scaffold	-9	binary	{}
+RNA folding-pairing, no scaffold	-8	binary	{}
+RNA folding-pairing, no scaffold	-7	binary	{}
+RNA folding-pairing, no scaffold	-6	binary	{}
+RNA folding-pairing, no scaffold	-5	binary	{}
+RNA folding-pairing, no scaffold	-4	binary	{}
+RNA folding-pairing, no scaffold	-3	binary	{}
