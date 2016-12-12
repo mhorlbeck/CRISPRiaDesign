@@ -16,7 +16,7 @@ To see full example code for de novo machine learning, prediction of sgRNA activ
 * Pysam
 * [ScreenProcessing](https://github.com/mhorlbeck/ScreenProcessing)
 
-External applications required:
+External command line applications required:
 * ViennaRNA
 * Bowtie (not Bowtie2)
 
