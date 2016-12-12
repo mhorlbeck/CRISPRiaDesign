@@ -6,7 +6,6 @@ import multiprocessing
 import numpy as np 
 import scipy as sp 
 import pandas as pd
-from matplotlib import pyplot as plt
 from ConfigParser import SafeConfigParser
 from Bio import Seq, SeqIO
 import pysam
@@ -14,7 +13,6 @@ from bx.bbi.bigwig_file import BigWigFile
 from sklearn import linear_model, svm, ensemble, preprocessing, grid_search, metrics
 
 from expt_config_parser import parseExptConfig, parseLibraryConfig
-from process_experiments import parseSgId
 
 ###############################################################################
 #                   Import and Merge Training/Test Data                       #
@@ -1005,6 +1003,58 @@ def generateAliasDict(hgncFile, gencodeData):
 	#   geneToAliases[gene].extend([tr[-1]['transcript_id'].split('.')[0] for tr in gencodeData[gene][1]])
 
 	return geneToAliases, geneToENSG
+
+#Parse information from the sgRNA ID standard format
+def parseSgId(sgId):
+    parseDict = dict()
+    
+    #sublibrary
+    if len(sgId.split('=')) == 2:
+        parseDict['Sublibrary'] = sgId.split('=')[0]
+        remainingId = sgId.split('=')[1]
+    else:
+        parseDict['Sublibrary'] = None
+        remainingId = sgId
+        
+    #gene name and strand
+    underscoreSplit = remainingId.split('_')
+    
+    for i,item in enumerate(underscoreSplit):
+        if item == '+':
+            strand = '+'
+            geneName = '_'.join(underscoreSplit[:i])
+            remainingId = '_'.join(underscoreSplit[i+1:])
+            break
+        elif item == '-':
+            strand = '-'
+            geneName = '_'.join(underscoreSplit[:i])
+            remainingId = '_'.join(underscoreSplit[i+1:])
+            break
+        else:
+            continue
+            
+    parseDict['strand'] = strand
+    parseDict['gene_name'] = geneName
+        
+    #position
+    dotSplit = remainingId.split('.')
+    parseDict['position'] = int(dotSplit[0])
+    remainingId = '.'.join(dotSplit[1:])
+    
+    #length incl pam
+    dashSplit = remainingId.split('-')
+    parseDict['length'] = int(dashSplit[0])
+    remainingId = '-'.join(dashSplit[1:])
+    
+    #pass score
+    tildaSplit = remainingId.split('~')
+    parseDict['pass_score'] = tildaSplit[-1]
+    remainingId = '~'.join(tildaSplit[:-1]) #should always be length 1 anyway
+    
+    #transcripts
+    parseDict['transcript_list'] = remainingId.split(',')
+    
+    return parseDict
 
 def parseAllSgIds(libraryTable):
 	sgInfoList = []

@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+#files too large for github
+large_data_files/
+
 # C extensions
 *.so
 
