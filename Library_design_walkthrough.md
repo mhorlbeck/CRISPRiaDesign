@@ -34,6 +34,7 @@ genomeDict = loadGenomeAsDict('large_data_files/hg19.fa')
 
 ```python
 #to use pre-calculated sgRNA activity score data (e.g. provided CRISPRi training data), load the following:
+#CRISPRa activity score data also included in data_files
 libraryTable_training = pd.read_csv('data_files/CRISPRi_trainingdata_libraryTable.txt', sep='\t', index_col = 0)
 libraryTable_training.head()
 ```
@@ -393,59 +394,24 @@ bwhandleDict = {'dnase':BigWigFile(open('large_data_files/wgEncodeOpenChromDnase
 paramTable_trainingGuides = generateTypicalParamTable(libraryTable_training,sgInfoTable_training, tssTable, p1p2Table, genomeDict, bwhandleDict)
 ```
 
-    .....Done!
+    ....
+
+    /usr/local/lib/python2.7/dist-packages/numpy/lib/nanfunctions.py:675: RuntimeWarning: Mean of empty slice
+      warnings.warn("Mean of empty slice", RuntimeWarning)
+    /usr/local/lib/python2.7/dist-packages/numpy/lib/nanfunctions.py:326: RuntimeWarning: All-NaN slice encountered
+      warnings.warn("All-NaN slice encountered", RuntimeWarning)
+
+
+    .Done!
 
 ## Fit parameters
-
-
-```python
-#populate table of fitting parameters
-typeList = ['binnable_onehot', 
-            'continuous', 'continuous', 'continuous', 'continuous',
-            'binnable_onehot','binnable_onehot','binnable_onehot','binnable_onehot',
-            'binnable_onehot','binnable_onehot','binnable_onehot','binnable_onehot','binnable_onehot','binnable_onehot','binnable_onehot',
-            'binary']
-typeList.extend(['binary']*160)
-typeList.extend(['binary']*(16*38))
-typeList.extend(['binnable_onehot']*3)
-typeList.extend(['binnable_onehot']*2)
-typeList.extend(['binary']*18)
-fitTable = pd.DataFrame(typeList, index=paramTable_trainingGuides.columns, columns=['type'])
-fitparams =[{'bin width':1, 'min edge data':50, 'bin function':np.median},
-            {'C':[.01,.05, .1,.5], 'gamma':[.000001, .00005,.0001,.0005]},
-            {'C':[.01,.05, .1,.5], 'gamma':[.000001, .00005,.0001,.0005]},
-            {'C':[.01,.05, .1,.5], 'gamma':[.000001, .00005,.0001,.0005]},
-            {'C':[.01,.05, .1,.5], 'gamma':[.000001, .00005,.0001,.0005]},
-            {'bin width':1, 'min edge data':50, 'bin function':np.median},
-            {'bin width':1, 'min edge data':50, 'bin function':np.median},
-            {'bin width':1, 'min edge data':50, 'bin function':np.median},
-            {'bin width':1, 'min edge data':50, 'bin function':np.median},
-            {'bin width':.1, 'min edge data':50, 'bin function':np.median},
-            {'bin width':.1, 'min edge data':50, 'bin function':np.median},
-            {'bin width':.1, 'min edge data':50, 'bin function':np.median},
-            {'bin width':.1, 'min edge data':50, 'bin function':np.median},
-            {'bin width':.1, 'min edge data':50, 'bin function':np.median},
-            {'bin width':.1, 'min edge data':50, 'bin function':np.median},
-            {'bin width':.1, 'min edge data':50, 'bin function':np.median},dict()]
-fitparams.extend([dict()]*160)
-fitparams.extend([dict()]*(16*38))
-fitparams.extend([
-            {'bin width':.15, 'min edge data':50, 'bin function':np.median},
-            {'bin width':.15, 'min edge data':50, 'bin function':np.median},
-            {'bin width':.15, 'min edge data':50, 'bin function':np.median}])
-fitparams.extend([
-            {'bin width':2, 'min edge data':50, 'bin function':np.median},
-            {'bin width':2, 'min edge data':50, 'bin function':np.median}])
-fitparams.extend([dict()]*18)
-fitTable['params'] = fitparams
-```
 
 
 ```python
 #load in the 5-fold cross-validation splits used to generate the model
 import cPickle
 with open('data_files/CRISPRi_trainingdata_traintestsets.txt') as infile:
-    geneFold_train, geneFold_test = cPickle.load(infile)
+    geneFold_train, geneFold_test, fitTable = cPickle.load(infile)
 ```
 
 
@@ -472,24 +438,18 @@ print 'Number of features used:', len(coefs) - sum(coefs['abs'] < .00000000001)
     ('distance', 'primary TSS-Down') {'C': 0.5, 'gamma': 5e-05}
     ('distance', 'secondary TSS-Up') {'C': 0.1, 'gamma': 5e-05}
     ('distance', 'secondary TSS-Down') {'C': 0.1, 'gamma': 5e-05}
+
+
+    /home/mhorlbeck/.local/lib/python2.7/site-packages/sklearn/utils/validation.py:323: UserWarning: StandardScaler assumes floating point values as input, got object
+      "got %s" % (estimator, X.dtype))
+    /home/mhorlbeck/.local/lib/python2.7/site-packages/sklearn/linear_model/base.py:400: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+      if precompute == 'auto':
+
+
     Prediction AUC-ROC: 0.803109696478
     Prediction R^2: 0.31263687609
     Regression parameters: 0.5 0.00534455043278
-
-
-
-    
-
-    NameErrorTraceback (most recent call last)
-
-    <ipython-input-17-c622a0e7d525> in <module>()
-         13 print 'Prediction R^2:', reg.score(scaler.transform(transformedParams_test), testScores)
-         14 print 'Regression parameters:', reg.l1_ratio_, reg.alpha_
-    ---> 15 coefs.append(pd.DataFrame(zip(*[abs(reg.coef_),reg.coef_]), index = transformedParams_test.columns, columns=['abs','true']))
-         16 print 'Number of features used:', len(coefs[-1]) - sum(coefs[-1]['abs'] < .00000000001)
-
-
-    NameError: name 'coefs' is not defined
+    Number of features used: 327
 
 
 
@@ -828,7 +788,6 @@ libraryTable_new.head()
 ```python
 #calculate parameters for new sgRNAs
 paramTable_new = generateTypicalParamTable(libraryTable_new, sgInfoTable_new, tssTable_new, p1p2Table_new, genomeDict, bwhandleDict)
-#this ran, but notebook disconnected so wasn't marked as run
 ```
 
     .....Done!
@@ -1082,16 +1041,17 @@ predictedScores_new.to_csv(PREDICTED_SCORES_PATH, sep='\t')
 # 3. Construct sgRNA libraries
 ## Score sgRNAs for off-target potential
 
+### There are many ways to score sgRNAs as off-target; below is one listed one method that is simple and flexible, but ignores gapped alignments, alternate PAMs, and uses bowtie which may not be maximally sensitive in all cases
+
 
 ```python
-#There are many ways to score sgRNAs as off-target; below is one listed one method that is simple and flexible,
-#but ignores gapped alignments, alternate PAMs, and uses bowtie which may not be maximally sensitive in all cases
+!mkdir temp_bowtie_files
 ```
 
 
 ```python
 #output all sequences to a temporary FASTQ file for running bowtie alignment
-fqFile = 'temp_bowtie.fq'
+fqFile = 'temp_bowtie_files/bowtie_input.fq'
 
 def outputTempBowtieFastq(libraryTable, outputFileName):
     phredString = 'I4!=======44444+++++++' #weighting for how impactful mismatches are along sgRNA sequence 
@@ -1124,9 +1084,9 @@ alignmentList = [(39,1,'large_data_files/hg19.ensemblTSSflank500b','39_nearTSS')
 alignmentColumns = []
 for btThreshold, mflag, bowtieIndex, runname in alignmentList:
 
-    alignedFile = 'bowtie_output/' + runname + '_aligned.txt'
-    unalignedFile = 'bowtie_output/' + runname + '_unaligned.fq'
-    maxFile = 'bowtie_output/' + runname + '_max.fq'
+    alignedFile = 'temp_bowtie_files/' + runname + '_aligned.txt'
+    unalignedFile = 'temp_bowtie_files/' + runname + '_unaligned.fq'
+    maxFile = 'temp_bowtie_files/' + runname + '_max.fq'
     
     bowtieString = 'bowtie -n 3 -l 15 -e '+str(btThreshold)+' -m ' + str(mflag) + ' --nomaqround -a --tryhard -p 16 --chunkmbs 256 ' + bowtieIndex + ' --suppress 5,6,7 --un ' + unalignedFile + ' --max ' + maxFile + ' '+ ' -q '+fqFile+' '+ alignedFile
     print bowtieString
@@ -1148,15 +1108,15 @@ for btThreshold, mflag, bowtieIndex, runname in alignmentList:
 alignmentTable = pd.concat(alignmentColumns,axis=1, keys=zip(*alignmentList)[3]).ne(True)
 ```
 
-    bowtie -n 3 -l 15 -e 39 -m 1 --nomaqround -a --tryhard -p 16 --chunkmbs 256 large_data_files/hg19.ensemblTSSflank500b --suppress 5,6,7 --un bowtie_output/39_nearTSS_unaligned.fq --max bowtie_output/39_nearTSS_max.fq  -q temp_bowtie.fq bowtie_output/39_nearTSS_aligned.txt
+    bowtie -n 3 -l 15 -e 39 -m 1 --nomaqround -a --tryhard -p 16 --chunkmbs 256 large_data_files/hg19.ensemblTSSflank500b --suppress 5,6,7 --un temp_bowtie_files/39_nearTSS_unaligned.fq --max temp_bowtie_files/39_nearTSS_max.fq  -q temp_bowtie_files/bowtie_input.fq temp_bowtie_files/39_nearTSS_aligned.txt
     0
-    bowtie -n 3 -l 15 -e 31 -m 1 --nomaqround -a --tryhard -p 16 --chunkmbs 256 large_data_files/hg19.ensemblTSSflank500b --suppress 5,6,7 --un bowtie_output/31_nearTSS_unaligned.fq --max bowtie_output/31_nearTSS_max.fq  -q temp_bowtie.fq bowtie_output/31_nearTSS_aligned.txt
+    bowtie -n 3 -l 15 -e 31 -m 1 --nomaqround -a --tryhard -p 16 --chunkmbs 256 large_data_files/hg19.ensemblTSSflank500b --suppress 5,6,7 --un temp_bowtie_files/31_nearTSS_unaligned.fq --max temp_bowtie_files/31_nearTSS_max.fq  -q temp_bowtie_files/bowtie_input.fq temp_bowtie_files/31_nearTSS_aligned.txt
     0
-    bowtie -n 3 -l 15 -e 21 -m 1 --nomaqround -a --tryhard -p 16 --chunkmbs 256 large_data_files/hg19_maskChrMandPAR --suppress 5,6,7 --un bowtie_output/21_genome_unaligned.fq --max bowtie_output/21_genome_max.fq  -q temp_bowtie.fq bowtie_output/21_genome_aligned.txt
+    bowtie -n 3 -l 15 -e 21 -m 1 --nomaqround -a --tryhard -p 16 --chunkmbs 256 large_data_files/hg19_maskChrMandPAR --suppress 5,6,7 --un temp_bowtie_files/21_genome_unaligned.fq --max temp_bowtie_files/21_genome_max.fq  -q temp_bowtie_files/bowtie_input.fq temp_bowtie_files/21_genome_aligned.txt
     0
-    bowtie -n 3 -l 15 -e 31 -m 2 --nomaqround -a --tryhard -p 16 --chunkmbs 256 large_data_files/hg19.ensemblTSSflank500b --suppress 5,6,7 --un bowtie_output/31_2_nearTSS_unaligned.fq --max bowtie_output/31_2_nearTSS_max.fq  -q temp_bowtie.fq bowtie_output/31_2_nearTSS_aligned.txt
+    bowtie -n 3 -l 15 -e 31 -m 2 --nomaqround -a --tryhard -p 16 --chunkmbs 256 large_data_files/hg19.ensemblTSSflank500b --suppress 5,6,7 --un temp_bowtie_files/31_2_nearTSS_unaligned.fq --max temp_bowtie_files/31_2_nearTSS_max.fq  -q temp_bowtie_files/bowtie_input.fq temp_bowtie_files/31_2_nearTSS_aligned.txt
     0
-    bowtie -n 3 -l 15 -e 31 -m 3 --nomaqround -a --tryhard -p 16 --chunkmbs 256 large_data_files/hg19.ensemblTSSflank500b --suppress 5,6,7 --un bowtie_output/31_3_nearTSS_unaligned.fq --max bowtie_output/31_3_nearTSS_max.fq  -q temp_bowtie.fq bowtie_output/31_3_nearTSS_aligned.txt
+    bowtie -n 3 -l 15 -e 31 -m 3 --nomaqround -a --tryhard -p 16 --chunkmbs 256 large_data_files/hg19.ensemblTSSflank500b --suppress 5,6,7 --un temp_bowtie_files/31_3_nearTSS_unaligned.fq --max temp_bowtie_files/31_3_nearTSS_max.fq  -q temp_bowtie_files/bowtie_input.fq temp_bowtie_files/31_3_nearTSS_aligned.txt
     0
 
 
@@ -1446,7 +1406,7 @@ libraryTable_complete.head()
 
 
 
-## Design negative controls matching the base composition of the library
+# 5. Design negative controls matching the base composition of the library
 
 
 ```python
@@ -1492,7 +1452,7 @@ for i in range(numberToGenerate):
     negList.append(generateRandomSequence(baseCumulativeFrequencies))
 negTable = pd.DataFrame(negList, index=['non-targeting_' + str(i) for i in range(numberToGenerate)], columns = ['sequence'])
 
-fqFile = 'temp_bowtie_input_negs.fq'
+fqFile = 'temp_bowtie_files/bowtie_input_negs.fq'
 outputTempBowtieFastq(negTable, fqFile)
 ```
 
@@ -1505,9 +1465,9 @@ alignmentList = [(31,1,'~/indices/hg19.ensemblTSSflank500b','31_nearTSS_negs'),
 alignmentColumns = []
 for btThreshold, mflag, bowtieIndex, runname in alignmentList:
 
-    alignedFile = 'bowtie_output/' + runname + '_aligned.txt'
-    unalignedFile = 'bowtie_output/' + runname + '_unaligned.fq'
-    maxFile = 'bowtie_output/' + runname + '_max.fq'
+    alignedFile = 'temp_bowtie_files/' + runname + '_aligned.txt'
+    unalignedFile = 'temp_bowtie_files/' + runname + '_unaligned.fq'
+    maxFile = 'temp_bowtie_files/' + runname + '_max.fq'
     
     bowtieString = 'bowtie -n 3 -l 15 -e '+str(btThreshold)+' -m ' + str(mflag) + ' --nomaqround -a --tryhard -p 16 --chunkmbs 256 ' + bowtieIndex + ' --suppress 5,6,7 --un ' + unalignedFile + ' --max ' + maxFile + ' '+ ' -q '+fqFile+' '+ alignedFile
     print bowtieString
@@ -1526,9 +1486,9 @@ alignmentTable = pd.concat(alignmentColumns,axis=1, keys=zip(*alignmentList)[3])
 alignmentTable.head()
 ```
 
-    bowtie -n 3 -l 15 -e 31 -m 1 --nomaqround -a --tryhard -p 16 --chunkmbs 256 ~/indices/hg19.ensemblTSSflank500b --suppress 5,6,7 --un bowtie_output/31_nearTSS_negs_unaligned.fq --max bowtie_output/31_nearTSS_negs_max.fq  -q temp_bowtie_input_negs.fq bowtie_output/31_nearTSS_negs_aligned.txt
+    bowtie -n 3 -l 15 -e 31 -m 1 --nomaqround -a --tryhard -p 16 --chunkmbs 256 ~/indices/hg19.ensemblTSSflank500b --suppress 5,6,7 --un temp_bowtie_files/31_nearTSS_negs_unaligned.fq --max temp_bowtie_files/31_nearTSS_negs_max.fq  -q temp_bowtie_files/bowtie_input_negs.fq temp_bowtie_files/31_nearTSS_negs_aligned.txt
     0
-    bowtie -n 3 -l 15 -e 21 -m 1 --nomaqround -a --tryhard -p 16 --chunkmbs 256 ~/indices/hg19_maskChrMandPAR --suppress 5,6,7 --un bowtie_output/21_genome_negs_unaligned.fq --max bowtie_output/21_genome_negs_max.fq  -q temp_bowtie_input_negs.fq bowtie_output/21_genome_negs_aligned.txt
+    bowtie -n 3 -l 15 -e 21 -m 1 --nomaqround -a --tryhard -p 16 --chunkmbs 256 ~/indices/hg19_maskChrMandPAR --suppress 5,6,7 --un temp_bowtie_files/21_genome_negs_unaligned.fq --max temp_bowtie_files/21_genome_negs_max.fq  -q temp_bowtie_files/bowtie_input_negs.fq temp_bowtie_files/21_genome_negs_aligned.txt
     0
 
 
@@ -1547,8 +1507,8 @@ alignmentTable.head()
   <tbody>
     <tr>
       <th>non-targeting_0</th>
-      <td>False</td>
-      <td>False</td>
+      <td>True</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>non-targeting_1</th>
@@ -1562,7 +1522,7 @@ alignmentTable.head()
     </tr>
     <tr>
       <th>non-targeting_3</th>
-      <td>False</td>
+      <td>True</td>
       <td>False</td>
     </tr>
     <tr>
@@ -1622,40 +1582,40 @@ acceptedNegs.head()
       <th>non-targeting_00000</th>
       <td>negative_control</td>
       <td>na</td>
-      <td>GGCGCGGCGTGCAACCGGGA</td>
-      <td>CCACCTTGTTGGGCGCGGCGTGCAACCGGGAGTTTAAGAGCTAAGCTG</td>
+      <td>GGTTTCGCGCGCTTACAGAT</td>
+      <td>CCACCTTGTTGGGTTTCGCGCGCTTACAGATGTTTAAGAGCTAAGCTG</td>
       <td>0</td>
     </tr>
     <tr>
       <th>non-targeting_00001</th>
       <td>negative_control</td>
       <td>na</td>
-      <td>GCAGCCGGTAGGACACCGAC</td>
-      <td>CCACCTTGTTGGCAGCCGGTAGGACACCGACGTTTAAGAGCTAAGCTG</td>
+      <td>GGTGGTCGAAGATAGCGAGC</td>
+      <td>CCACCTTGTTGGGTGGTCGAAGATAGCGAGCGTTTAAGAGCTAAGCTG</td>
       <td>0</td>
     </tr>
     <tr>
       <th>non-targeting_00002</th>
       <td>negative_control</td>
       <td>na</td>
-      <td>GGCGCGCCGTCTCCACTTTT</td>
-      <td>CCACCTTGTTGGGCGCGCCGTCTCCACTTTTGTTTAAGAGCTAAGCTG</td>
+      <td>GCTCTTGACAAATTCAAGCT</td>
+      <td>CCACCTTGTTGGCTCTTGACAAATTCAAGCTGTTTAAGAGCTAAGCTG</td>
       <td>0</td>
     </tr>
     <tr>
       <th>non-targeting_00003</th>
       <td>negative_control</td>
       <td>na</td>
-      <td>GCGCGTTGCAGAGATAGACG</td>
-      <td>CCACCTTGTTGGCGCGTTGCAGAGATAGACGGTTTAAGAGCTAAGCTG</td>
+      <td>GGCCGGGAGAGCGGGAACTC</td>
+      <td>CCACCTTGTTGGGCCGGGAGAGCGGGAACTCGTTTAAGAGCTAAGCTG</td>
       <td>0</td>
     </tr>
     <tr>
       <th>non-targeting_00004</th>
       <td>negative_control</td>
       <td>na</td>
-      <td>GATGTGGAGGCGTTGCCGCG</td>
-      <td>CCACCTTGTTGGATGTGGAGGCGTTGCCGCGGTTTAAGAGCTAAGCTG</td>
+      <td>GTCGCAAGCCGGGGTAGGGT</td>
+      <td>CCACCTTGTTGGTCGCAAGCCGGGGTAGGGTGTTTAAGAGCTAAGCTG</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -1670,7 +1630,7 @@ libraryTable_complete.to_csv(LIBRARY_WITHOUT_NEGATIVES_PATH, sep='\t')
 acceptedNegs.to_csv(NEGATIVE_CONTROLS_PATH,sep='\t')
 ```
 
-## Finalizing library design
+# 6. Finalizing library design
 
 * divide genes into sublibrary groups (if required)
 * assign negative control sgRNAs to sublibrary groups; ~1-2% of the number of sgRNAs in the library is a good rule-of-thumb
