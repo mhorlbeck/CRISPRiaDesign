@@ -2,7 +2,7 @@
 
 This site hosts the sgRNA machine learning scripts used to generate the Weissman lab's next-generation CRISPRi and CRISPRa library designs [(Horlbeck et al., eLife 2016)](https://elifesciences.org/content/5/e19760). These are currently implemented as interactive scripts along with iPython notebooks with step-by-step instructions for creating new sgRNA libraries. Future plans include adding command line functions to make library design more user-friendly. Note that all sgRNA designs for CRISPRi/a human/mouse protein-coding gene libraries are included as supplementary tables in the eLife paper, so cloning of individual sgRNAs or construction of any custom sublibraries targeting protein-coding genes can simply refer to those tables. These scripts are primarily useful for the design of sgRNAs targeting novel or non-coding genes, or for organisms beyond human and mouse.
 
-**To apply the exact quantitative models used to generate the CRISPRi-v2 or CRISPRa-v2 libraries**, follow the steps outlined in the Library_design_walkthrough (included as a Jupyter notebook or [web page](Library_design_walkthrough). 
+**To apply the exact quantitative models used to generate the CRISPRi-v2 or CRISPRa-v2 libraries**, follow the steps outlined in the Library_design_walkthrough (included as a Jupyter notebook or [web page](Library_design_walkthrough.md)). 
 
 To see full example code for de novo machine learning, prediction of sgRNA activity for desired loci, and construction of new genome-scale CRISPRi/a libraries, see the CRISPRiaDesign_example_notebook (included as Jupyter notebook or [web page](CRISPRiaDesign_example_notebook.md)).
 
