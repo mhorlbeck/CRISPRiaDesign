@@ -15,13 +15,15 @@ To see full example code for de novo machine learning, prediction of sgRNA activ
 * bxpython (v0.5.0, https://github.com/bxlab/bx-python)
 * Pysam
 * [ScreenProcessing](https://github.com/mhorlbeck/ScreenProcessing)
+
 External applications required:
 * ViennaRNA
 * Bowtie (not Bowtie2)
+
 Large genomic data files required:
 Links are to human genome files relied upon for the hCRISPRi-v2 and hCRISPRa-v2 machine learning--and required for the Library_design_walkthrough--but any organism/assembly may be used for design of new libraries or de novo machine learning.
 * Genome sequence as FASTA ([hg19](http://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/))
 * FANTOM5 TSS annotation as BED ([TSS_human](http://fantom.gsc.riken.jp/5/datafiles/phase1.3/extra/TSS_classifier/))
 * Chromatin data as BigWig ([MNase](https://www.encodeproject.org/files/ENCFF000VNN/), [DNase](https://www.encodeproject.org/files/ENCFF000SVY/), [FAIRE-seq](https://www.encodeproject.org/files/ENCFF000TLU/))
 * HGNC table of gene aliases (not strictly required for the Library_design_walkthrough but useful in some steps)
-* Ensembl annotation as GTF (not strictly required for the Library_design_walkthrough but used in other functions; release 74 used for the published library designs)
+* Ensembl annotation as GTF (not strictly required for the Library_design_walkthrough but useful in some steps and in other functions; release 74 used for the published library designs)
