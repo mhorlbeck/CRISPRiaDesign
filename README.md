@@ -21,7 +21,9 @@ External command line applications required:
 * Bowtie (not Bowtie2)
 
 Large genomic data files required:
-Links are to human genome files relied upon for the hCRISPRi-v2 and hCRISPRa-v2 machine learning--and required for the Library_design_walkthrough--but any organism/assembly may be used for design of new libraries or de novo machine learning.
+
+Links are to human genome files relied upon for the hCRISPRi-v2 and hCRISPRa-v2 machine learning--and required for the Library_design_walkthrough--but any organism/assembly may be used for design of new libraries or de novo machine learning. For convenience, **the files referenced in Library_design_walkthrough in the folder "large_data_files" are also available [here](https://ucsf.box.com/s/s4ds471in2ngjer7okavzf5cqf2ebrqj)**.
+
 * Genome sequence as FASTA ([hg19](http://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/))
 * FANTOM5 TSS annotation as BED ([TSS_human](http://fantom.gsc.riken.jp/5/datafiles/phase1.3/extra/TSS_classifier/))
 * Chromatin data as BigWig ([MNase](https://www.encodeproject.org/files/ENCFF000VNN/), [DNase](https://www.encodeproject.org/files/ENCFF000SVY/), [FAIRE-seq](https://www.encodeproject.org/files/ENCFF000TLU/))
